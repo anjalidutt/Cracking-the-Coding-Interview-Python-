@@ -1,0 +1,19 @@
+def checkPermutation(str1,str2):
+    if len(str1)!=len(str2):
+        return False
+    str1_dict ={}
+    for i in range(len(str1)):
+        if str1_dict.get(str1[i],None)==None:
+            str1_dict[str1[i]]=1
+        else:
+            str1_dict[str1[i]]= str1_dict[str1[i]]+1
+    for i in range(len(str2)):
+        if str1_dict.get(str2[i], None)==None:
+            return False
+        str1_dict[str2[i]]= str1_dict.get(str2[i])-1
+        if str1_dict.get(str2[i])==0:
+            del str1_dict[str2[i]]
+    if len(str1_dict)==0:
+        return True
+    else:
+        return False
