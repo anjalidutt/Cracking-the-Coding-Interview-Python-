@@ -1,0 +1,17 @@
+def stringCompression(given_str):
+    i=0
+    new_str =""
+    diff_str= False
+    enter_loop= False
+    while i<len(given_str):
+        counter=1
+        while i<len(given_str)-1 and given_str[i]==given_str[i+1]:
+            diff_str = True
+            counter+=1
+            i+=1
+        new_str = new_str+given_str[i]+str(counter)
+        i+=1
+    if diff_str:
+        return new_str
+    else:
+        return given_str
