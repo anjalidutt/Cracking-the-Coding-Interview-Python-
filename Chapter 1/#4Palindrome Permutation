@@ -1,0 +1,17 @@
+def PalindromePermutation(pal_str):
+    pal_str= pal_str.lower()
+    pal_dict={}
+    counter = 0
+    for i in range(len(pal_str)):
+        if pal_str[i]==" ":
+            continue
+        if pal_dict.get(pal_str[i],None)==None:
+            pal_dict[pal_str[i]]=1
+        else:
+            pal_dict[pal_str[i]]= pal_dict[pal_str[i]]+1
+        if pal_dict[pal_str[i]]%2==1:
+            counter+=1
+        else:
+            counter-=1
+    
+    return counter<=1
