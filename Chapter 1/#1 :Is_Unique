@@ -1,0 +1,7 @@
+def isUnique(my_string):
+    my_dict ={}
+    for i in range(len(my_string)):
+        if my_dict.get(my_string[i], None) != None:
+            return False
+        my_dict[my_string[i]] = i
+    return True
