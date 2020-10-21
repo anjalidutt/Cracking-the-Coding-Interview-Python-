@@ -1,0 +1,16 @@
+    
+def RotateMatrix(given_matrix):
+    N = len(given_matrix)
+    for i in range(N//2):
+        for j in range(i,N-i-1):
+            temp = given_matrix[i][j]
+            given_matrix[i][j] = given_matrix[N-1-j][i]
+            print(given_matrix)
+            given_matrix[N-1-j][i]=given_matrix[N-1-i][N-1-j]
+            print(given_matrix)
+            given_matrix[N-1-i][N-1-j]= given_matrix[j][N-i-1]
+            print(given_matrix)
+            given_matrix[j][N-i-1] = temp
+            print(given_matrix)
+    return given_matrix
+   
