@@ -6,3 +6,4 @@ def URLify(given_str,rLen):
         else:
             new_str= new_str + given_str[i]
     return new_str
+    
